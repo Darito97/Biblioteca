@@ -1,0 +1,136 @@
+body{
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+header{
+  background-color: #1B2021;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+.tituloPrincipal{
+  font-size: 40px;
+  margin: 10px;
+}
+.textoSecundarioDelHeader{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin: 0;
+}
+.botonesDelEncabezado{
+  padding: 20px;
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.botonDelEncabezado{
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 16px;
+  padding: 10px 20px;
+  color: white;
+}
+#botonParaAgregarLibro{
+  background-color: white;
+  color: #1B2021;
+  font-weight: 600;
+}
+#botonParaAgregarLibro:active{
+  border-color: #1B2021;
+}
+#botonParaBuscarLibro:active{
+  border-color: #323637;
+}
+.formulario{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform: scaleY(0);
+}
+.animarFormulario{
+  animation: aparecer 0.4s linear;
+  transform: scaleY(1);
+}
+@keyframes aparecer {
+  from{
+    opacity: 0;
+    transform: scaleY(0.7);
+  }
+  to{
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.label{
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+.input{
+  border-radius: 16px;
+  padding: 7px 12px;
+  font-size: 15px;
+}
+#botonBuscar{
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #1B2021;
+  font-weight: 600;
+  padding: 10px 10px;
+  margin: 10px;
+  width: 100px;
+}
+.tituloDeMostrarLibros{
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+.contenedorDeListaDeLibros{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.book{
+  border: 2px solid #1B2021;
+  border-radius: 16px;
+  color: #323637;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+}
+.tituloDelLibro{
+  color: #1B2021;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.nombreDelAutor{
+  font-size: 16px;
+  font-style: italic;
+  margin: 5px 0;
+  text-align: end;
+}
+.numeroDePaginas{
+  color: #323637;
+  font-size: 14px;
+  margin: 5px 0;
+}
+.yaLoLei{
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
