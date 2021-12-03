@@ -22,85 +22,99 @@
           Buscar libro en mi lista
         </button>
       </div>
-      <form
-        action=""
-        id="formularioDeAgregadoDeUnNuevoLibro"
-        class="formulario"
-      >
-        <div class="contenedorDeInput">
-          <label class="label" for="nombre">Nombre:</label>
-          <input
-            name="nombre"
-            id="nombre"
-            class="input"
-            type="text"
-            placeholder="Ingresa el nombre del libro"
-          />
-        </div>
-        <div class="contenedorDeInput">
-          <label class="label" for="autor">Autor:</label>
-          <input
-            name="autor"
-            id="autor"
-            class="input"
-            type="text"
-            placeholder="Ingresa el nombre del autor del libro"
-          />
-        </div>
-        <div class="contenedorDeInput">
-          <label class="label" for="paginas">Numero de paginas:</label>
-          <input
-            name="paginas"
-            id="paginas"
-            class="input"
-            type="number"
-            placeholder="Ingresa el # de paginas"
-          />
-        </div>
-        <div class="contenedorDeInput">
-          <label class="label" for="leido">¿Ya lo leiste?</label>
-          <input name="leido" id="leido" type="checkbox" />
-        </div>
-      </form>
-      <form
-        action=""
-        id="formularioParaBuscarUnLibroEnLaLista"
-        class="formulario"
-      >
-        <div class="contenedorDeInput">
-          <label class="label" for="inputBuscar">Ingresa el nombre o autor:</label>
-          <input
-            type="text"
-            name="inputBuscar"
-            id="inputBuscar"
-            class="input"
-            placeholder="Ingresa el nombre o autor"
-          />
-          <input id="botonBuscar" type="submit" value="Buscar">
-        </div>
-      </form>
+      <div class="contenedorDeFormularios">
+        <form
+          action=""
+          id="formularioDeAgregadoDeUnNuevoLibro"
+          class="formulario"
+        >
+          <div class="contenedorDeInput">
+            <label class="label" for="nombre">Nombre:</label>
+            <input
+              name="nombre"
+              id="nombre"
+              class="input"
+              type="text"
+              placeholder="Ingresa el nombre del libro"
+            />
+          </div>
+          <div class="contenedorDeInput">
+            <label class="label" for="autor">Autor:</label>
+            <input
+              name="autor"
+              id="autor"
+              class="input"
+              type="text"
+              placeholder="Ingresa el nombre del autor del libro"
+            />
+          </div>
+          <div class="contenedorDeInput">
+            <label class="label" for="paginas">Numero de paginas:</label>
+            <input
+              name="paginas"
+              id="paginas"
+              class="input"
+              type="number"
+              placeholder="Ingresa el # de paginas"
+            />
+          </div>
+          <div class="contenedorDeInput">
+            <label class="label" for="leido">Marca si ya lo leiste</label>
+            <input name="leido" id="leido" type="checkbox" />
+          </div>
+          <input class="botonSubmit" type="submit" value="Agregar" />
+        </form>
+        <form
+          action=""
+          id="formularioParaBuscarUnLibroEnLaLista"
+          class="formulario"
+        >
+          <div class="contenedorDeInput">
+            <label class="label" for="inputBuscar"
+              >Ingresa el nombre o autor:</label
+            >
+            <input
+              type="text"
+              name="inputBuscar"
+              id="inputBuscar"
+              class="input"
+              placeholder="Ingresa el nombre o autor"
+            />
+          </div>
+          <input class="botonSubmit" type="submit" value="Buscar" />
+        </form>
+      </div>
     </header>
     <h2 class="tituloDeMostrarLibros">Lista de libros</h2>
     <main class="contenedorDeListaDeLibros">
       <div class="book">
+        <button class="botonEliminarLibro">
+          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
+        </button>
         <p class="tituloDelLibro">Titulo</p>
         <p class="nombreDelAutor">Autor</p>
         <p class="numeroDePaginas">25 paginas</p>
         <p class="yaLoLei">Ya leido</p>
       </div>
       <div class="book">
+        <button class="botonEliminarLibro">
+          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
+        </button>
         <p class="tituloDelLibro">Titulo</p>
         <p class="nombreDelAutor">Autor</p>
         <p class="numeroDePaginas">25 paginas</p>
         <p class="yaLoLei">Ya leido</p>
       </div>
       <div class="book">
+        <button class="botonEliminarLibro">
+          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
+        </button>
         <p class="tituloDelLibro">Titulo</p>
         <p class="nombreDelAutor">Autor</p>
         <p class="numeroDePaginas">25 paginas</p>
         <p class="yaLoLei">Ya leido</p>
       </div>
     </main>
-    <script src="./script.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

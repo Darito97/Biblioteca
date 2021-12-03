@@ -44,26 +44,39 @@ header{
 #botonParaBuscarLibro:active{
   border-color: #323637;
 }
-.formulario{
+.contenedorDeFormularios{
+  min-height: 200px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario{
+  display: none;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transform: scaleY(0);
 }
-.animarFormulario{
+#formularioParaBuscarUnLibroEnLaLista{
+  flex-direction: column;
+}
+.aparecer{
   animation: aparecer 0.4s linear;
-  transform: scaleY(1);
+}
+.desaparecer{
+  animation: aparecer 0.4s linear reverse;
 }
 @keyframes aparecer {
   from{
     opacity: 0;
-    transform: scaleY(0.7);
+    height: 0;
+    transform: scale(0);
   }
   to{
     opacity: 1;
-    transform: scaleY(1);
+    height: auto;
+    transform: scale(1);
   }
 }
 .label{
@@ -76,7 +89,11 @@ header{
   padding: 7px 12px;
   font-size: 15px;
 }
-#botonBuscar{
+#leido{
+  height: 20px;
+  width: 20px;
+}
+.botonSubmit{
   background-color: white;
   border: 1px solid transparent;
   border-radius: 16px;
@@ -108,12 +125,28 @@ header{
   width: 100%;
   max-width: 250px;
 }
+.botonEliminarLibro{
+  background-color: transparent;
+  border-color: transparent;
+  padding: 5px 0;
+}
+.botonEliminarLibro:active{
+  animation: rotar 1s linear;
+}
+@keyframes rotar {
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
 .tituloDelLibro{
   color: #1B2021;
   font-size: 20px;
   font-style: italic;
   font-weight: 600;
-  margin-bottom: 0;
+  margin: 0;
 }
 .nombreDelAutor{
   font-size: 16px;
