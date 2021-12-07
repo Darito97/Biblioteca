@@ -128,6 +128,32 @@ function EliminarElementoConId(id) {
     mostrarNotificacion("Eliminado exitosamente");
   }, 300);
 }
+let idDeEliminacion = ''
+function mostrarModalDeEliminacion(id) {
+  const ventanaDeEliminacion = document.getElementById("ventanaDeEliminacion");
+  ventanaDeEliminacion.style = "display: flex;";
+  ventanaDeEliminacion.classList.add("aparecerDesdeElFondo");
+  setTimeout(() => {
+    ventanaDeEliminacion.classList.remove("aparecerDesdeElFondo");
+  }, 300);
+  idDeEliminacion = id
+}
+function cerrarModalDeEliminacion() {
+  ventanaDeEliminacion.classList.add("desaparecerAlFondo");
+  setTimeout(() => {
+    ventanaDeEliminacion.classList.remove("desaparecerAlFondo");
+    ventanaDeEliminacion.style = "";
+  }, 290);
+}
+const botonCerrarModalEliminar = document.getElementById('botonCerrarModalEliminar')
+botonCerrarModalEliminar.addEventListener('click', () => cerrarModalDeEliminacion())
+
+const botonDeModalEliminar = document.getElementById('botonDeModalEliminar')
+botonDeModalEliminar.addEventListener('click', ()=>{
+  EliminarElementoConId(idDeEliminacion)
+  cerrarModalDeEliminacion()
+})
+
 const creacionDeElemento = (libro, conBotonCerrar) => {
   let div = document.createElement("div");
   div.classList.add("book");
@@ -141,7 +167,7 @@ const creacionDeElemento = (libro, conBotonCerrar) => {
 
     botonParaEliminar.addEventListener("click", (e) => {
       let idDelElementoAEliminar = e.path[2].id;
-      EliminarElementoConId(idDelElementoAEliminar);
+      mostrarModalDeEliminacion(idDelElementoAEliminar);
     });
   }
   let titulo = document.createElement("p");
@@ -213,20 +239,19 @@ formulario.addEventListener("keypress", (e) => {
 
 const botonBuscar = document.getElementById("botonBuscar");
 const inputBuscar = document.getElementById("inputBuscar");
-let estaEscribiendo = true
+let estaEscribiendo = true;
 inputBuscar.addEventListener("focusin", () => {
   if (inputBuscar.value === "") {
-    console.log(inputBuscar)
     botonBuscar.style = "display: inline-flex;";
     botonBuscar.classList.add("aparecer");
     setTimeout(() => {
       botonBuscar.classList.remove("aparecer");
     }, 300);
   }
-  estaEscribiendo= true
+  estaEscribiendo = true;
 });
 inputBuscar.addEventListener("focusout", (e) => {
-  estaEscribiendo = false
+  estaEscribiendo = false;
   setTimeout(() => {
     if (inputBuscar.value === "" && !estaEscribiendo) {
       botonBuscar.style = "display: inline-flex;";
