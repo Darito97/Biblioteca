@@ -9,18 +9,39 @@
   </head>
   <body>
     <header>
-      <p class="textoSecundarioDelHeader">Bienvenido a:</p>
-      <h1 class="tituloPrincipal">My Library</h1>
-      <p class="textoSecundarioDelHeader">
-        Aqui puedes ingresar libros para hacer una lista
-      </p>
-      <div class="botonesDelEncabezado">
-        <button class="botonDelEncabezado" id="botonParaAgregarLibro">
-          Agregar libro a mi lista
-        </button>
-        <button class="botonDelEncabezado" id="botonParaBuscarLibro">
-          Buscar libro en mi lista
-        </button>
+      <div class="informacionPrincipal">
+        <p class="textoSecundarioDelHeader">Bienvenido a</p>
+        <h1 class="tituloPrincipal">My Library</h1>
+        <p class="textoSecundarioDelHeader">
+          Aqui puedes ingresar libros para hacer una lista
+        </p>
+        <div class="botonesDelEncabezado">
+          <button class="botonDelEncabezado" id="botonParaAgregarLibro">
+            Agregar libro a mi lista
+          </button>
+          <form id="formularioDeBusqueda" action="">
+            <input
+              class="input"
+              id="inputBuscar"
+              type="text"
+              placeholder="Buscar libro en mi lista"
+            />
+            <button class="botonDelEncabezado" id="botonBuscar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#000000"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
       <div class="contenedorDeFormularios">
         <form
@@ -28,6 +49,23 @@
           id="formularioDeAgregadoDeUnNuevoLibro"
           class="formulario"
         >
+          <button
+            id="botonCerrarVentanaDeAgregarNuevoLibro"
+            class="botonCerrar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+              />
+            </svg>
+          </button>
           <div class="contenedorDeInput">
             <label class="label" for="nombre">Nombre:</label>
             <input
@@ -62,59 +100,44 @@
             <label class="label" for="leido">Marca si ya lo leiste</label>
             <input name="leido" id="leido" type="checkbox" />
           </div>
-          <input class="botonSubmit" type="submit" value="Agregar" />
-        </form>
-        <form
-          action=""
-          id="formularioParaBuscarUnLibroEnLaLista"
-          class="formulario"
-        >
-          <div class="contenedorDeInput">
-            <label class="label" for="inputBuscar"
-              >Ingresa el nombre o autor:</label
-            >
-            <input
-              type="text"
-              name="inputBuscar"
-              id="inputBuscar"
-              class="input"
-              placeholder="Ingresa el nombre o autor"
-            />
-          </div>
-          <input class="botonSubmit" type="submit" value="Buscar" />
+          <button class="botonSubmit" id="submitAgregar" type="submit">
+            Agregar
+          </button>
         </form>
       </div>
     </header>
+    <section id="busquedaDeLibrosEncontrados">
+      <div>
+        <button class="botonDelEncabezado" id="botonCerrarBusquedas">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+            />
+          </svg>
+        </button>
+        <p class="tituloDeMostrarLibros" id="tituloBusqueda">Busqueda</p>
+      </div>
+      <div id="contenedorDeLibrosEncontrados">
+
+      </div>
+    </section>
     <h2 class="tituloDeMostrarLibros">Lista de libros</h2>
-    <main class="contenedorDeListaDeLibros">
-      <div class="book">
-        <button class="botonEliminarLibro">
-          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
-        </button>
-        <p class="tituloDelLibro">Titulo</p>
-        <p class="nombreDelAutor">Autor</p>
-        <p class="numeroDePaginas">25 paginas</p>
-        <p class="yaLoLei">Ya leido</p>
-      </div>
-      <div class="book">
-        <button class="botonEliminarLibro">
-          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
-        </button>
-        <p class="tituloDelLibro">Titulo</p>
-        <p class="nombreDelAutor">Autor</p>
-        <p class="numeroDePaginas">25 paginas</p>
-        <p class="yaLoLei">Ya leido</p>
-      </div>
-      <div class="book">
-        <button class="botonEliminarLibro">
-          <img src="./resources/close_black_24dp.svg" alt="iconoDeCerrar" />
-        </button>
-        <p class="tituloDelLibro">Titulo</p>
-        <p class="nombreDelAutor">Autor</p>
-        <p class="numeroDePaginas">25 paginas</p>
-        <p class="yaLoLei">Ya leido</p>
+    <main class="contenedorDeListaDeLibros" id="contenedorDeListaDeLibros">
+      <div>
+        <p class="textoDeFondo">No tienes agregado ningun libro</p>
       </div>
     </main>
+
+    <section id="notificacion">
+      <p id="textoDeNotificacion">Has agregado un libro</p>
+    </section>
     <script src="./index.js"></script>
   </body>
 </html>
