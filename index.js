@@ -32,12 +32,14 @@ botonCerrarVentanaDeAgregarNuevoLibro.addEventListener("click", (e) => {
 
 let miBiblioteca = [];
 
-function Libro(id, nombre, autor, paginas, leido) {
-  this.id = id;
-  this.nombre = nombre;
-  this.autor = autor;
-  this.paginas = paginas;
-  this.leido = leido;
+class Libro {
+  constructor(id, nombre, autor, paginas, leido) {
+    this.id = id;
+    this.nombre = nombre;
+    this.autor = autor;
+    this.paginas = paginas;
+    this.leido = leido;
+  }
 }
 function limpiarCamposDeEntrada() {
   document.getElementById("nombre").value = "";
@@ -128,7 +130,7 @@ function EliminarElementoConId(id) {
     mostrarNotificacion("Eliminado exitosamente");
   }, 300);
 }
-let idDeEliminacion = ''
+let idDeEliminacion = "";
 function mostrarModalDeEliminacion(id) {
   const ventanaDeEliminacion = document.getElementById("ventanaDeEliminacion");
   ventanaDeEliminacion.style = "display: flex;";
@@ -136,7 +138,7 @@ function mostrarModalDeEliminacion(id) {
   setTimeout(() => {
     ventanaDeEliminacion.classList.remove("aparecerDesdeElFondo");
   }, 300);
-  idDeEliminacion = id
+  idDeEliminacion = id;
 }
 function cerrarModalDeEliminacion() {
   ventanaDeEliminacion.classList.add("desaparecerAlFondo");
@@ -145,14 +147,18 @@ function cerrarModalDeEliminacion() {
     ventanaDeEliminacion.style = "";
   }, 290);
 }
-const botonCerrarModalEliminar = document.getElementById('botonCerrarModalEliminar')
-botonCerrarModalEliminar.addEventListener('click', () => cerrarModalDeEliminacion())
-
-const botonDeModalEliminar = document.getElementById('botonDeModalEliminar')
-botonDeModalEliminar.addEventListener('click', ()=>{
-  EliminarElementoConId(idDeEliminacion)
+const botonCerrarModalEliminar = document.getElementById(
+  "botonCerrarModalEliminar"
+);
+botonCerrarModalEliminar.addEventListener("click", () =>
   cerrarModalDeEliminacion()
-})
+);
+
+const botonDeModalEliminar = document.getElementById("botonDeModalEliminar");
+botonDeModalEliminar.addEventListener("click", () => {
+  EliminarElementoConId(idDeEliminacion);
+  cerrarModalDeEliminacion();
+});
 
 const creacionDeElemento = (libro, conBotonCerrar) => {
   let div = document.createElement("div");
